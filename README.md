@@ -1,38 +1,29 @@
-# Welcome to Functional Code Smells
-
-The listing of code smells as they pertain to functional programming.
-
 ## Code smells that are shared with Object Oriented programming 
-Reference: https://blog.codinghorror.com/code-smells/
+These code smells are nothing new and generally apply to functional programming just as much as they apply to object oriented programming.
 
-- [Comment](#comments)
-- a
-- b
-- c
+Reference: <https://blog.codinghorror.com/code-smells/>
 
-### Comments
-> The best comment is an intention-revealing name
-```csharp
-DoSomething(int a, int b, int c) {
-  // Triple the value
-  var factor = 3.2 * c
-  //Then add it
-  return a * b + factor
-}
-```
-```fsharp
-fun do_something a b c =
-  // Triple the value
-  let factor = 3.2 * c
-  //Then add it
-  a * b + factor
-```
-
+- Comments
+- Duplicate code
+- Dead code
+- Speculative Generality
+- Shotgun surgery
+- Long function
+- Large module
+- Primitive Obsession
+- Long parameter list
+- Data clumps
+- Middle man
+- Message chains
+- Oddball
+- Switch statement
+- Conditional complexity
+- Combinatorial Explosion
+- Temporary field
+- Side effect
 
 ## Code smells specific to Functional programmming 
+These code smells are either unique to functional programming, or have a particular emphasis in the functional programming community.
 
-- x
-- y
-- z
-
-### Single letter variables
+- Single letter variables
+- Record of functions
