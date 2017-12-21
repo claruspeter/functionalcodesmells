@@ -27,3 +27,10 @@ These code smells are either unique to functional programming, or have a particu
 
 - Single letter variables
 - Record of functions
+- Mixed code and data
+- Functions with no output
+
+
+
+References:
+- [Scott Wlaschin- code refactor](https://www.youtube.com/watch?v=nxIRlf4AtcA)
