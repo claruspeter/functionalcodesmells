@@ -1,3 +1,5 @@
+Introductory blurb
+
 ## Code smells that are shared with Object Oriented programming 
 These code smells are nothing new and generally apply to functional programming just as much as they apply to object oriented programming.
 
