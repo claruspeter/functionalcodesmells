@@ -1,0 +1,30 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.inner {
+    width: 980px;
+}
+
+ul li{
+    list-style: none;
+}
+
+.highlighter-rouge {
+    display: inline-block;
+    width: 47%;
+    top: 0;
+    vertical-align: top;
+}
+
+section#downloads{
+    float: right;
+    margin-top: -5em;
+}
+
+@media (max-width: 980px) {
+    .inner{width: 95%;}
+    section#downloads{float: none; margin-top: 0.5em;}
+    .highlighter-rouge {display: inline-block; width: 95%;}
+}
