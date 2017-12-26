@@ -16,12 +16,21 @@ ul li{
     width: 47%;
     top: 0;
     vertical-align: top;
+    margin-bottom: 1em;
+}
+pre{
+    margin-bottom: 0;
 }
 
 section#downloads{
     float: right;
     margin-top: -5em;
 }
+
+.highlighter-rouge+.highlighter-rouge pre, .highlighter-rouge+.highlighter-rouge code {
+    background: #113300;
+}
+
 
 @media (max-width: 980px) {
     .inner{width: 95%;}
