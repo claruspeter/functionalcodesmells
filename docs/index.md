@@ -35,9 +35,12 @@ let sum a b c d =
 #### Refactorings
 - Rename variable / parameter
 
-### Record of functions
-### Mixed code and data
 ### Functions with no output
+### Mutable variables
+### Immutable universe
+### Null propagation
+### Mixed code and data
+### Record of functions
 
 #### References:
 - [Scott Wlaschin- code refactor](https://www.youtube.com/watch?v=nxIRlf4AtcA)
