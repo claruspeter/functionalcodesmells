@@ -1,4 +1,8 @@
-# Single letter variables
+---
+title: Single letter variables
+description: favouring typing over reading
+---
+
 Using variable / parameter names such as _a_, _b_, & _c_ remove all context except the position in arg list.  If the arguments are not semantically identical, then more descriptive names should be used.
 
 ## Example
@@ -17,12 +21,23 @@ let divide numerator denominator =
     
 ```
 
-When the parameters are interchangeable then using nondescript names is appropriate, and in facts indicates to the reader that the name
+## Exceptions
+When the parameters are interchangeable then using nondescript names is appropriate, and in fact indicates to the reader that the name
 is actually unimportant.
 
 ```fsharp
 let sum a b c d =
     a + b + c + d
+```
+
+When the scope is a single line (or at least very small) and there is only one target parameter.  The single letter variable
+indicates to the reader to focus on the transformation rather than the input.
+
+```fsharp
+let result = 
+    inputList
+    |> List.map    (fun x -> x * 2 + 37.4)
+    |> List.filter (fun x -> x > 20)
 ```
 
 ## Refactorings
