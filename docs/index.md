@@ -6,7 +6,7 @@ This is an effort to document a comprehensive list of code smells that can appea
 These code smells are either unique to functional programming, or have a particular emphasis in the functional programming community.
 
 - [Single letter variables](single-letter-variables)
-- Functions with no output
+- [Functions with no output](no-output)
 - Mutable variables
 - Immutable universe
 - Null propagation
