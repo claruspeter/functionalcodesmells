@@ -7,7 +7,7 @@ These code smells are either unique to functional programming, or have a particu
 
 - [Single letter variables](single-letter-variables)
 - [Functions with no output](no-output)
-- Mutable variables
+- [Mutable variables](mutable-variables)
 - Immutable universe
 - Null propagation
 - Mixed code and data

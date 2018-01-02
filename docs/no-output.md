@@ -59,7 +59,7 @@ Again, the solution is to pass in the data to the function as a parameter and de
 module MyModule
 
 mutable private secret = 42
-mutable lastEdited = ""
+mutable private lastEdited = ""
 
 
 let goOneBetter byWhom : unit =
