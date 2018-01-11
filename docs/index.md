@@ -9,7 +9,7 @@ These code smells are either unique to functional programming, or have a particu
 - [Functions with no output](no-output)
 - Mutable variables
 - Immutable universe
-- Null propagation
+- [Null propagation](null-propagation)
 - Mixed code and data
 - Record of functions
 
