@@ -12,33 +12,63 @@ Some of the benefits that have lead to embracing immutability include:
 So, if the software contains a __mutable__ variable then it may be a good time to ask why.
 Most often, it is a symptom of a larger architecural problem and introducing a mutable variable could actually be solving the wrong problem, or even acting as an enabler of the wider problem.
 
-
 ## Example: 
-Having a deep hierarchy of values can lead to a developer to reason that is it simply easier to modify a component of the value in place, rather than to spend time/space of copying nearly the the entire structure.
+Responding to a user interaction to update a property.  It may seem simplest to just update the property, but this can causes side-effects.  Now the model needs to be responsive to change, and may need to worry about things like multi-threaded access and race conditions.
+
+The idiomatic response is to create a new, stable model with the new value in it.
 
 ```fsharp
-type Planet = {name:string; order: int; distanceFromSun: double; mutable orbitalVelocity:double}
-type SolarSystem = {name:string; relativePosition: Vector2; planets: Planet[]}
-type Galaxy = {name: string; type:GalaxyType; position: Vector3; rotationalVelocity: double; systems: SolarSystem[]}
-type Universe = {dimensionalOrder: int; galaxies: Galaxy[]}
+type Planet = {
+    name:string
+    order: int
+    distanceFromSun: double
+    mutable orbitalVelocity:double
+}
 
-let setPlanetSpeed universe nGalaxy nSystem nPlanet speed : unit =
-    universe.[nGalaxy].[nSystem].[nPlanet].orbitalVelocity <- speed
+let setPlanetSpeed planet speed : unit =
+    
+
+let planet = universe.findPlanet('vulcan')
+planet.orbitalVelocity <- speed
+universe.recalcEverything()  // because something's changed
+
+
+
+
+
+
+
 ```
-
-Note that one of the indicators is that the code may contain a number of _setters_ for a large object.
-
 
 ```fsharp
+type Planet = {
+    name:string
+    order: int
+    distanceFromSun: double
+    orbitalVelocity:double
+}
 
+let planet = universe.findPlanet('vulcan')
+let updatedplanet = {
+    planet with orbitalVelocity = getValueFromUsr()
+}
+let updatedUniverse = {
+    universe with planets = 
+        planets |> map 
+            (p->if p=planet then updatedplanet else p)
+}
+// carry on with updated universe
 ```
 
+## Larger Example: Lenses
+//TODO
 
 ## Refactorings & alternative designs
+- Seeded constructor
 - [Lenses](https://medium.com/@haumohio/focusing-in-on-change-with-lenses)
 
 ## Related Smells
-- Immutable Universe
+- [Immutable Universe](immutable-universe)
 
 ## References
 - <https://medium.com/@haumohio/handling-change-in-an-immutable-world>
